@@ -28,6 +28,12 @@ export class GoogleAnalyticsService {
         this.renderer.appendChild(head, script);
     }
 
+    setPropertyDomain() {
+        gtag('set', 'user_properties', {
+            email_domain: '@yahoo.com'
+          });
+    }
+
     trackEvent(eventName: string, eventCategory: string) {
             gtag('event', eventName, {
                 // event Type - example: 'SCROLL_TO_TOP_CLICKED'

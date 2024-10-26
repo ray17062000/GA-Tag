@@ -12,11 +12,12 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.googleAnalyticsService.loadGoogleAnalytics()
+    this.googleAnalyticsService.loadGoogleAnalytics();
     }
   
     trackEvent(event: string) {
-      this.googleAnalyticsService.trackEvent(event, event); 
+      this.googleAnalyticsService.trackEvent(event, event);
+      this.googleAnalyticsService.setPropertyDomain();
     }
     
 }
