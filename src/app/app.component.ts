@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GoogleAnalyticsService } from './google-analytics.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-angular-project';
+  constructor(private googleAnalyticsService: GoogleAnalyticsService) {
+  }
+
+  ngOnInit() {
+    this.googleAnalyticsService.loadGoogleAnalytics()
+    }
+  
+    trackEvent(event: string) {
+      this.googleAnalyticsService.trackEvent(event, event); 
+    }
+    
 }
