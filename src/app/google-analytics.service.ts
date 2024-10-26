@@ -28,10 +28,13 @@ export class GoogleAnalyticsService {
         this.renderer.appendChild(head, script);
     }
 
-    setPropertyDomain() {
+    setPropertyDomain(event) {
+        const email_event = `@${event}.com`;
+        console.log(email_event)
         gtag('set', 'user_properties', {
-            email_domain: '@yahoo.com'
+            email_domain: email_event
           });
+
     }
 
     trackEvent(eventName: string, eventCategory: string) {

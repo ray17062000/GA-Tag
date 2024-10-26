@@ -17,7 +17,7 @@ export class AppComponent {
   
     trackEvent(event: string) {
       this.googleAnalyticsService.trackEvent(event, event);
-      this.googleAnalyticsService.setPropertyDomain();
+      this.googleAnalyticsService.setPropertyDomain(event);
     }
     
 }
